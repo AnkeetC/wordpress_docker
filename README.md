@@ -16,14 +16,14 @@ Before running this script, make sure you have the following prerequisites insta
 2. Give execute permissions to the script:
    
 ```bash
-chmod +x wordpress_docker_setup.sh
+chmod +x wordpress_site.sh
 ```
 ### Usage
 
 Run the script with the appropriate command and sub-command as follows:
 
 ```bash
-./wordpress_docker_setup.sh <create|manage|delete>
+./wordpress_site.sh  <create|manage|delete>
 ```
 ### Commands
 
@@ -32,7 +32,7 @@ Run the script with the appropriate command and sub-command as follows:
  To create a new WordPress site, run the following command:
  
 ```bash
-./wordpress_docker_setup.sh create
+./wordpress_site.sh create
 ```
 The script will prompt you to enter the site name (e.g., example.com) and set up a LEMP stack using Docker Compose. It will use MariaDB as the database and the latest version of WordPress.
 
@@ -43,7 +43,7 @@ The site will be accessible at http://example.com:8000.
  To start or stop the WordPress site, run the following command:
 
  ```bash
-./wordpress_docker_setup.sh manage
+./wordpress_site.sh  manage
 ```
 The script will prompt you to enter the action (start/stop). Enter either `start` to start the containers or `stop` to stop them.
 
@@ -53,7 +53,7 @@ To delete the WordPress site, run the following command:
 
  
 ```bash
-./wordpress_docker_setup.sh delete
+./wordpress_site.sh  delete
 ```
 The script will prompt you to confirm if you want to delete the site. Enter `y` for confirmation. It will then stop and remove the Docker containers and volumes associated with the site. Additionally, it will remove the entry for the site from `/etc/hosts`.
 
@@ -62,7 +62,7 @@ The script will prompt you to confirm if you want to delete the site. Enter `y` 
 
 * The script assumes that you have administrative privileges (sudo) to install Docker and modify system configurations.
 * The script uses default passwords for the database to keep it simple. In a production environment, it is recommended to use strong and unique passwords.
-* Ensure that the port 8000 is available and not being used by any other service on your system.
+* Ensure that port 8000 is available and not being used by any other service on your system.
 * If you encounter any issues while running the script, please refer to the [Docker documentation](https://docs.docker.com/) for troubleshooting.
 
 #### Feel free to modify and improve this script according to your specific needs. Enjoy your Dockerized WordPress site!
